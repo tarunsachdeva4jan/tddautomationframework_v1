@@ -11,5 +11,7 @@ public abstract class Browser {
 	public abstract void setPreferences();
 
 	public abstract WebDriver initBrowser();
+	
+	public  WebDriver abc;
 
 }
