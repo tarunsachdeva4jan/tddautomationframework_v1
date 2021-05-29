@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Testing Project Suite]" parallel="methods">
+  <test name="DemoTests(failed)" parallel="methods">
+    <classes>
+      <class name="com.envision.test.tests.DemoTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="loginScenarioNegative" invocation-numbers="0"/>
+          <include name="beforeClass"/>
+          <include name="beforeAnythingElse"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- com.envision.test.tests.DemoTest -->
+    </classes>
+  </test> <!-- DemoTests(failed) -->
+</suite> <!-- Failed suite [Testing Project Suite] -->

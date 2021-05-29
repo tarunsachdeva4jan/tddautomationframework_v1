@@ -1,0 +1,20 @@
+<Application>
+	<Pages>
+		<LoginPage>
+			<tbx_Username>
+				<xpath>//input[@id='email']</xpath>
+			</tbx_Username>
+			<tbx_Password>
+				<xpath>//input[@id='passwd']</xpath>
+			</tbx_Password>
+			<btn_Submit>
+				<xpath>//button[@id='SubmitLogin']</xpath>
+			</btn_Submit>
+		</LoginPage>
+		<HomePage>
+			<lnk_SignIn>
+				<xpath>//a[@class='login']</xpath>
+			</lnk_SignIn>
+		</HomePage>
+	</Pages>
+</Application>

@@ -1,0 +1,12 @@
+<suite name="Testing Project Suite" parallel="methods"
+	thread-count="1" verbose="1" preserve-order="true">
+	<test name="DemoTests">
+		<classes>
+			<class name="com.envision.test.tests.DemoTest">
+				<methods>
+					<include name="loginScenarioNegative" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
