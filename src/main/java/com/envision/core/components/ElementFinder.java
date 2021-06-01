@@ -8,23 +8,29 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.envision.core.browser.WebDriverManager;
 import com.envision.core.properties.PropertiesLoader;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class ElementFinder {
 
 	public static WebElement findElementBy(String by, String value) throws Exception {
-		WebElement element;
-		WebDriver driver = WebDriverManager.realWebDriver.get();
-		By bys;
-		if (by.equalsIgnoreCase("id")) {
-			bys = By.id(value);
-		} else if (by.equalsIgnoreCase("xpath")) {
-			bys = By.xpath(value);
-		} else {
-			return null;
-		}
+		WebElement element = null;
+		try {
+			WebDriver driver = WebDriverManager.realWebDriver.get();
+			By bys;
+			if (by.equalsIgnoreCase("id")) {
+				bys = By.id(value);
+			} else if (by.equalsIgnoreCase("xpath")) {
+				bys = By.xpath(value);
+			} else {
+				return null;
+			}
 
-		element = waitForElementToBeVisible(driver, bys);
-		
+			element = waitForElementToBeVisible(driver, bys);
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Element [" + value + "] successfully");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Unable to locate Element [" + value + "]");
+		}
 		return element;
 	}
 

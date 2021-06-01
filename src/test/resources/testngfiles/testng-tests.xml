@@ -1,10 +1,13 @@
 <suite name="Testing Project Suite" parallel="methods"
 	thread-count="1" verbose="1" preserve-order="true">
+	<listeners>
+	<listener class-name= "com.envision.core.components.Hooks"/>
+	</listeners>
 	<test name="DemoTests">
 		<classes>
-			<class name="com.envision.test.tests.DemoTest">
+			<class name="com.envision.test.tests.LoginTest">
 				<methods>
-					<include name="loginScenarioNegative" />
+					<include name="loginScenario" />
 				</methods>
 			</class>
 		</classes>

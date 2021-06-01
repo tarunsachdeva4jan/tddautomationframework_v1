@@ -2,46 +2,43 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Testing Project Suite" duration-ms="15487" started-at="2021-05-29T15:23:57Z" finished-at="2021-05-29T15:24:12Z">
+  <suite name="Testing Project Suite" duration-ms="45509" started-at="2021-06-01T01:57:24Z" finished-at="2021-06-01T01:58:09Z">
     <groups>
     </groups>
-    <test name="DemoTests" duration-ms="15487" started-at="2021-05-29T15:23:57Z" finished-at="2021-05-29T15:24:12Z">
-      <class name="com.envision.test.tests.DemoTest">
-        <test-method status="PASS" signature="beforeAnythingElse()[pri:0, instance:com.envision.test.tests.DemoTest@26be92ad]" name="beforeAnythingElse" is-config="true" duration-ms="11" started-at="2021-05-29T11:23:57Z" finished-at="2021-05-29T11:23:57Z">
+    <test name="DemoTests" duration-ms="45509" started-at="2021-06-01T01:57:24Z" finished-at="2021-06-01T01:58:09Z">
+      <class name="com.envision.test.tests.LoginTest">
+        <test-method status="PASS" signature="beforeAnythingElse()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeAnythingElse" is-config="true" duration-ms="17" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeAnythingElse -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.envision.test.tests.DemoTest@26be92ad]" name="beforeClass" is-config="true" duration-ms="8" started-at="2021-05-29T11:23:57Z" finished-at="2021-05-29T11:23:57Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeClass" is-config="true" duration-ms="3" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.DemoTest@26be92ad]" name="beforeMethod" is-config="true" duration-ms="4159" started-at="2021-05-29T11:23:58Z" finished-at="2021-05-29T11:24:02Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeMethod" is-config="true" duration-ms="4141" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="loginScenarioNegative(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.DemoTest@26be92ad]" name="loginScenarioNegative" duration-ms="9503" started-at="2021-05-29T11:24:02Z" data-provider="testCaseDataProvider" finished-at="2021-05-29T11:24:12Z">
+        <test-method status="FAIL" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="loginScenario" duration-ms="39898" started-at="2021-05-31T21:57:29Z" data-provider="testCaseDataProvider" finished-at="2021-05-31T21:58:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[abcdef]]>
+                <![CDATA[Hey@abc.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Testing123@123]]>
+                <![CDATA[Testing@123]]>
               </value>
             </param>
           </params>
-          <exception class="org.junit.ComparisonFailure">
-            <message>
-              <![CDATA[expected:<rgb[(241, 51, 64])> but was:<rgb[a(241, 51, 64, 1])>]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.junit.ComparisonFailure: expected:<rgb[(241, 51, 64])> but was:<rgb[a(241, 51, 64, 1])>
-	at org.junit.Assert.assertEquals(Assert.java:125)
-	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.envision.test.pages.LoginPage.validateErrorHighlightOnUserName(LoginPage.java:44)
-	at com.envision.test.tests.DemoTest.loginScenarioNegative(DemoTest.java:58)
+              <![CDATA[java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.clickIt(WebComponents.java:154)
+	at com.envision.test.pages.LoginPage.hitSubmit(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:40)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -57,15 +54,15 @@
 	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.junit.ComparisonFailure -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginScenarioNegative -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.DemoTest@26be92ad]" name="afterMethod" is-config="true" duration-ms="490" started-at="2021-05-29T11:24:12Z" finished-at="2021-05-29T11:24:12Z">
+        </test-method> <!-- loginScenario -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="afterMethod" is-config="true" duration-ms="232" started-at="2021-05-31T21:58:09Z" finished-at="2021-05-31T21:58:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.envision.test.tests.DemoTest -->
+      </class> <!-- com.envision.test.tests.LoginTest -->
     </test> <!-- DemoTests -->
   </suite> <!-- Testing Project Suite -->
 </testng-results>

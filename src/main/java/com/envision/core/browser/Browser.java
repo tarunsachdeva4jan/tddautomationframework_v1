@@ -12,6 +12,4 @@ public abstract class Browser {
 
 	public abstract WebDriver initBrowser();
 	
-	public  WebDriver abc;
-
 }

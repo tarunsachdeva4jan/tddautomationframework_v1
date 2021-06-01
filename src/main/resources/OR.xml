@@ -8,7 +8,7 @@
 				<xpath>//input[@id='passwd']</xpath>
 			</tbx_Password>
 			<btn_Submit>
-				<xpath>//button[@id='SubmitLogin']</xpath>
+				<xpath>//button[@id='SubmitLogin1234']</xpath>
 			</btn_Submit>
 		</LoginPage>
 		<HomePage>

@@ -6,6 +6,8 @@ import java.util.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.envision.core.browser.WebDriverManager;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class WebComponents implements IBrowserActions, IWebPageActions {
 
@@ -22,6 +25,10 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 	public WebComponents(String pageName) {
 		this.driver = WebDriverManager.realWebDriver.get();
 		this.pageName = pageName;
+	}
+
+	public void pauseABit(int seconds) throws Exception {
+		Thread.sleep(seconds * 1000);
 	}
 
 	public void scrollUp(WebDriver driver) {
@@ -129,32 +136,92 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 
 	}
 
+	public void launchUrl(String url) throws Exception {
+		try {
+			driver.get(url);
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"URL [" + url + "] opened successfully");
+
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Unable to open Url [" + url + "] ");
+			throw e;
+		}
+	}
+
 	public void clickIt(String elementName) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
-		element.click();
+		try {
+			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+			element.click();
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Clicked on Element [" + elementName + "] successfully");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Clicking on Element [" + elementName + "] failed");
+			throw e;
+		}
 	}
 
 	public void mouseClickIt(String elementName) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
-		new Actions(driver).click(element).build().perform();
+		try {
+			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+			new Actions(driver).click(element).build().perform();
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Mouse Clicked on Element [" + elementName + "] successfully");
 
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Unable to move mouse to element [" + elementName + "] ");
+
+		}
 	}
 
 	public void jsClickIt(String element) {
 
 	}
 
+	public String FetchCssValue(String elementName, String attributeName) throws Exception {
+		try {
+			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+			String attribute = element.getCssValue(attributeName);
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Fetched attribute[" + attributeName + "] for Element [" + elementName + "] ");
+
+			return attribute;
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Unable to fetch CSSValue for element [" + elementName + "] ");
+		}
+		return null;
+	}
+
 	public void typeInto(String elementName, String valueToType) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
-		element.click();
-		element.clear();
-		element.sendKeys(valueToType);
+		try {
+			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+			element.click();
+			element.clear();
+			element.sendKeys(valueToType);
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Typed [" + valueToType + "] into textbox [" + elementName + "] successfully");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Unable to Type [" + valueToType + "] into textbox [" + elementName + "]");
+			throw e;
+		}
 	}
 
 	public String getText(String elementName) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
-		String text = element.getText();
-		return text;
+		try {
+			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+			String text = element.getText();
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Fetched Text [" + text + "] for element [" + elementName + "]");
+			return text;
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Unabel to fetch text for element [" + elementName + "]");
+
+		}
+		return null;
 	}
 
 	public void selectValueFromDropdown(String by, String elementName, String value)
@@ -205,8 +272,7 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 		new Actions(driver).contextClick(element).build().perform();
 	}
 
-	public void rightClickOnScreen(String elementName) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
+	public void rightClickOnScreen() throws Exception {
 		new Actions(driver).contextClick().build().perform();
 
 	}
@@ -269,6 +335,26 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 
 	public void switchToOriginalWindow() {
 		driver.switchTo().defaultContent();
+	}
+
+	public static String captureSnapshot(String testName, WebDriver driver) throws Exception {
+		try {
+			ThreadLocal<String> base64 = new ThreadLocal<String>();
+			TakesScreenshot screenshot = (TakesScreenshot) driver;
+			String snapshotFile = "data:image/png;base64,"
+					+ screenshot.getScreenshotAs(OutputType.BASE64);
+			base64.set(snapshotFile);
+			return base64.get();
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Unable to capture screenshot");
+
+		}
+		return null;
+	}
+
+	public void rightClickOnScreen(String elementName) throws Exception {
+		// TODO Auto-generated method stub
+
 	}
 
 }

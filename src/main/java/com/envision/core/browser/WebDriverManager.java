@@ -2,6 +2,9 @@ package com.envision.core.browser;
 
 import org.openqa.selenium.WebDriver;
 
+import com.envision.core.components.ExtentTestManager;
+import com.relevantcodes.extentreports.LogStatus;
+
 public class WebDriverManager {
 
 	public static ThreadLocal<WebDriver> realWebDriver = new ThreadLocal<WebDriver>();
@@ -21,17 +24,37 @@ public class WebDriverManager {
 	}
 
 	public void launchBrowser(String browserName) throws Exception {
-		Browser browser = GetBrowser(BrowserType.valueOf(browserName));
-		WebDriver driver = browser.initBrowser();
-		realWebDriver.set(driver);
+		try {
+			Browser browser = GetBrowser(BrowserType.valueOf(browserName));
+			WebDriver driver = browser.initBrowser();
+			realWebDriver.set(driver);
+			/*
+			 * ExtentTestManager.getTest().log(LogStatus.PASS, "Browser [" + browserName +
+			 * "] Opened Successfully");
+			 */
+		} catch (Exception e) {
+			/*
+			 * ExtentTestManager.getTest().log(LogStatus.FAIL, "Unable to open Browser [" +
+			 * browserName + "] ");
+			 */ }
 	}
 
 	public void closeBrowser() {
-		realWebDriver.get().close();
+		try {
+			realWebDriver.get().close();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "Browser Closed");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Unable to close browser");
+		}
 	}
 
 	public void closeAllBrowsers() {
-		realWebDriver.get().quit();
+		try {
+			realWebDriver.get().quit();
+			ExtentTestManager.getTest().log(LogStatus.PASS, "All Browsers Closed");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL, "Unable to close all browsers");
+		}
 	}
 
 	public static void main(String[] args) throws Exception {

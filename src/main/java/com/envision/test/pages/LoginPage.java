@@ -1,48 +1,37 @@
 package com.envision.test.pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
-import com.envision.core.browser.WebDriverManager;
-import com.envision.core.components.ElementFinder;
 import com.envision.core.components.WebComponents;
 
-public class LoginPage {
+public class LoginPage extends WebComponents {
+
+	static String pageName = LoginPage.class.getSimpleName();
+
+	public LoginPage() {
+		super(pageName);
+	}
 
 	public void enterUserName(String userName) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath("LoginPage", "tbx_Username");
-		element.clear();
-		element.click();
-		element.sendKeys(userName);
+		typeInto("tbx_Username", userName);
 	}
 
 	public void enterPassword(String password) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath("LoginPage", "tbx_Password");
-		element.clear();
-		element.click();
-		element.sendKeys(password);
+
+		typeInto("tbx_Password", password);
 	}
 
 	public void hitSubmit() throws Exception {
-		WebElement element = ElementFinder.findElementByXpath("LoginPage", "btn_Submit");
-
-		element.click();
-
+		clickIt("btn_Submit");
 	}
 
-	public void validateErrorHighlightOnUserName(String userName, String errorCode) throws Exception {
-		WebElement element = ElementFinder.findElementByXpath("LoginPage", "tbx_Username");
-		element.clear();
-		element.click();
-		element.sendKeys(userName);
-		element.sendKeys(Keys.TAB);
-		Thread.sleep(2000);
-		String color = element.getCssValue("color");
-		System.out.println(color);
-		/* rgb(241, 51, 64) */
+	public void validateErrorHighlightOnUserName(String userName, String errorCode)
+			throws Exception {
 
-		Assert.assertEquals(errorCode, color);
+		typeInto("tbx_Username", userName);
+		pauseABit(1);
+		String color = FetchCssValue("tbx_Username", "color");
+		Assert.assertTrue(color.contains(errorCode));
 	}
 
 	public void loginToApplication(String userName, String password) throws Exception {

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat May 29 11:23:57 EDT 2021</td>
+<td>Started on:</td><td>Mon May 31 21:57:24 EDT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15487 ms)</td>
+<tr><td>Total time:</td><td>45 seconds (45509 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,21 +75,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.envision.test.tests.DemoTest.loginScenarioNegative()'><b>loginScenarioNegative</b><br>Test class: com.envision.test.tests.DemoTest<br>Parameters: abcdef, Testing123@123</td>
-<td><div><pre>org.junit.ComparisonFailure: expected:&lt;rgb[(241, 51, 64])&gt; but was:&lt;rgb[a(241, 51, 64, 1])&gt;
-	at org.junit.Assert.assertEquals(Assert.java:125)
-	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.envision.test.pages.LoginPage.validateErrorHighlightOnUserName(LoginPage.java:44)
-	at com.envision.test.tests.DemoTest.loginScenarioNegative(DemoTest.java:58)
+<td title='com.envision.test.tests.LoginTest.loginScenario()'><b>loginScenario</b><br>Test class: com.envision.test.tests.LoginTest<br>Parameters: Hey@abc.com, Testing@123</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.clickIt(WebComponents.java:154)
+	at com.envision.test.pages.LoginPage.hitSubmit(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:40)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:21)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace431527631", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace431527631'><pre>org.junit.ComparisonFailure: expected:&lt;rgb[(241, 51, 64])&gt; but was:&lt;rgb[a(241, 51, 64, 1])&gt;
-	at org.junit.Assert.assertEquals(Assert.java:125)
-	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.envision.test.pages.LoginPage.validateErrorHighlightOnUserName(LoginPage.java:44)
-	at com.envision.test.tests.DemoTest.loginScenarioNegative(DemoTest.java:58)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace817433951", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace817433951'><pre>java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.clickIt(WebComponents.java:154)
+	at com.envision.test.pages.LoginPage.hitSubmit(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:40)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -104,8 +104,8 @@ function toggleAllBoxes() {
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 </pre></div></td>
-<td>9</td>
-<td>com.envision.test.tests.DemoTest@26be92ad</td></tr>
+<td>39</td>
+<td>com.envision.test.tests.LoginTest@6f7fd0e6</td></tr>
 </table><p>
 </body>
 </html>

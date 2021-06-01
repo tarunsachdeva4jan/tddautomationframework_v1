@@ -1,15 +1,23 @@
 package com.envision.test.pages;
 
-import org.openqa.selenium.WebElement;
+import com.envision.core.components.WebComponents;
+import com.envision.core.properties.PropertiesLoader;
 
-import com.envision.core.components.ElementFinder;
+public class HomePage extends WebComponents {
 
-public class HomePage {
+	static String pageName = HomePage.class.getSimpleName();
+
+	public HomePage() {
+		super(pageName);
+	}
 
 	public LoginPage clickSignIn() throws Exception {
-		WebElement element = ElementFinder.findElementByXpath("HomePage", "lnk_SignIn");
-		element.click();
+		clickIt("lnk_SignIn");
 		return new LoginPage();
+	}
+
+	public void navigateToHomePage() throws Exception {
+		launchUrl(PropertiesLoader.url);
 	}
 
 }

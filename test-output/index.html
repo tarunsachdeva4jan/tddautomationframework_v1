@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Testing_Project_Suite">
-                    <span>C:\Users\Tarun\eclipse-workspace\tdd-group-slytherins\src\test\resources\testngfiles\testng-tests.xml</span>
+                    <span>C:\Users\Tarun\GitHubCode\Slytherins\tddautomationframework_v1\src\test\resources\testngfiles\testng-tests.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Testing_Project_Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Project_Suite" title="com.envision.test.tests.DemoTest" hash-for-method="loginScenarioNegative(abcdef, Testing123@123)">loginScenarioNegative(abcdef, Testing123@123)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Testing_Project_Suite" title="com.envision.test.tests.LoginTest" hash-for-method="loginScenario(Hey@abc.com, Testing@123)">loginScenario(Hey@abc.com, Testing@123)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Testing_Project_Suite -->
@@ -119,20 +119,20 @@
           <div class="suite-Testing_Project_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.envision.test.tests.DemoTest</span>
+              <span class="class-name">com.envision.test.tests.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginScenarioNegative(abcdef, Testing123@123)">
-                  </a> <!-- loginScenarioNegative(abcdef, Testing123@123) -->
-                  <span class="method-name">loginScenarioNegative</span>
-                  <span class="parameters">(abcdef, Testing123@123)</span>
-                  <div class="stack-trace">org.junit.ComparisonFailure: expected:&lt;rgb[(241, 51, 64])&gt; but was:&lt;rgb[a(241, 51, 64, 1])&gt;
-	at org.junit.Assert.assertEquals(Assert.java:125)
-	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.envision.test.pages.LoginPage.validateErrorHighlightOnUserName(LoginPage.java:44)
-	at com.envision.test.tests.DemoTest.loginScenarioNegative(DemoTest.java:58)
+                  <a name="loginScenario(Hey@abc.com, Testing@123)">
+                  </a> <!-- loginScenario(Hey@abc.com, Testing@123) -->
+                  <span class="method-name">loginScenario</span>
+                  <span class="parameters">(Hey@abc.com, Testing@123)</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.clickIt(WebComponents.java:154)
+	at com.envision.test.pages.LoginPage.hitSubmit(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:40)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:21)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
@@ -145,20 +145,23 @@
         </div> <!-- panel Testing_Project_Suite -->
         <div panel-name="test-xml-Testing_Project_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Tarun\eclipse-workspace\tdd-group-slytherins\src\test\resources\testngfiles\testng-tests.xml</span>
+            <span class="header-content">C:\Users\Tarun\GitHubCode\Slytherins\tddautomationframework_v1\src\test\resources\testngfiles\testng-tests.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; name=&quot;Testing Project Suite&quot; parallel=&quot;methods&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.envision.core.components.Hooks&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test name=&quot;DemoTests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.envision.test.tests.DemoTest&quot;&gt;
+      &lt;class name=&quot;com.envision.test.tests.LoginTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;loginScenarioNegative&quot;/&gt;
+          &lt;include name=&quot;loginScenario&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.envision.test.tests.DemoTest --&gt;
+      &lt;/class&gt; &lt;!-- com.envision.test.tests.LoginTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- DemoTests --&gt;
 &lt;/suite&gt; &lt;!-- Testing Project Suite --&gt;
@@ -200,14 +203,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginScenarioNegative')
-data.setCell(0, 2, 'com.envision.test.tests.DemoTest')
-data.setCell(0, 3, 9503);
+data.setCell(0, 1, 'loginScenario')
+data.setCell(0, 2, 'com.envision.test.tests.LoginTest')
+data.setCell(0, 3, 39898);
 window.suiteTableData['Testing_Project_Suite']= { tableData: data, tableDiv: 'times-div-Testing_Project_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Testing_Project_Suite">
               </div> <!-- times-div-Testing_Project_Suite -->
             </div> <!-- times-div -->
@@ -226,9 +229,9 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.envision.test.tests.DemoTest</span>
+              <span class="ignored-class-name">com.envision.test.tests.LoginTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginScenario</span>
+                <span class="ignored-method-name">loginScenarioNegative</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -240,28 +243,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.envision.test.tests.DemoTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.envision.test.tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeAnythingElse</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">49 ms</span>
+                <span class="method-start">38 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">1341 ms</span>
+                <span class="method-start">861 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">loginScenarioNegative(abcdef, Testing123@123)</span>
-                <span class="method-start">5500 ms</span>
+                <span class="method-name">loginScenario(Hey@abc.com, Testing@123)</span>
+                <span class="method-start">5002 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">15008 ms</span>
+                <span class="method-start">45293 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
