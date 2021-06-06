@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Testing Project Suite" duration-ms="20144" started-at="2021-06-06T13:35:41Z" finished-at="2021-06-06T13:36:01Z">
+    <groups>
+    </groups>
+    <test name="DemoTests" duration-ms="20144" started-at="2021-06-06T13:35:41Z" finished-at="2021-06-06T13:36:01Z">
+      <class name="com.envision.test.tests.LoginTest">
+        <test-method status="PASS" signature="beforeAnythingElse()[pri:0, instance:com.envision.test.tests.LoginTest@1810399e]" name="beforeAnythingElse" is-config="true" duration-ms="22" started-at="2021-06-06T09:35:41Z" finished-at="2021-06-06T09:35:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeAnythingElse -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.envision.test.tests.LoginTest@1810399e]" name="beforeClass" is-config="true" duration-ms="6" started-at="2021-06-06T09:35:41Z" finished-at="2021-06-06T09:35:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@1810399e]" name="beforeMethod" is-config="true" duration-ms="5499" started-at="2021-06-06T09:35:43Z" finished-at="2021-06-06T09:35:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@1810399e]" name="loginScenario" duration-ms="12463" started-at="2021-06-06T09:35:48Z" data-provider="testCaseDataProvider" finished-at="2021-06-06T09:36:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hey@abc.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Testing@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenario -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@1810399e]" name="afterMethod" is-config="true" duration-ms="636" started-at="2021-06-06T09:36:01Z" finished-at="2021-06-06T09:36:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.envision.test.tests.LoginTest -->
+    </test> <!-- DemoTests -->
+  </suite> <!-- Testing Project Suite -->
+</testng-results>

@@ -12,7 +12,9 @@ public class HomePage extends WebComponents {
 	}
 
 	public LoginPage clickSignIn() throws Exception {
-		clickIt("lnk_SignIn");
+		// clickIt("lnk_SignIn");
+		performAction("Click", "lnk_SignIn", "");
+	//	clickIt("Link", "text", "Sign in");
 		return new LoginPage();
 	}
 

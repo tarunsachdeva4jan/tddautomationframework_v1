@@ -3,13 +3,14 @@
 <suite thread-count="1" name="Failed suite [Testing Project Suite]" parallel="methods">
   <listeners>
     <listener class-name="com.envision.core.components.Hooks"/>
+    <listener class-name="com.envision.core.components.RetryTransformer"/>
   </listeners>
   <test name="DemoTests(failed)" parallel="methods">
     <classes>
       <class name="com.envision.test.tests.LoginTest">
         <methods>
           <include name="beforeClass"/>
-          <include name="loginScenario" invocation-numbers="0"/>
+          <include name="loginScenario" invocation-numbers="0 0 0"/>
           <include name="beforeMethod"/>
           <include name="beforeAnythingElse"/>
           <include name="afterMethod"/>

@@ -161,6 +161,19 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 		}
 	}
 
+	public void clickIt(String elementName, String xpathType, String value) throws Exception {
+		try {
+			WebElement element = ElementFinder.findElementByXpath(elementName, xpathType, value);
+			element.click();
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Clicked on Element [" + elementName + "] successfully");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Clicking on Element [" + elementName + "] failed");
+			throw e;
+		}
+	}
+
 	public void mouseClickIt(String elementName) throws Exception {
 		try {
 			WebElement element = ElementFinder.findElementByXpath(pageName, elementName);
@@ -203,7 +216,23 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 			ExtentTestManager.getTest().log(LogStatus.PASS,
 					"Typed [" + valueToType + "] into textbox [" + elementName + "] successfully");
 		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
+					"Unable to Type [" + valueToType + "] into textbox [" + elementName + "]");
+			throw e;
+		}
+	}
+
+	public void typeInto(String elementName, String xpathType, String valueToType, String value)
+			throws Exception {
+		try {
+			WebElement element = ElementFinder.findElementByXpath(elementName, xpathType, value);
+			element.click();
+			element.clear();
+			element.sendKeys(valueToType);
 			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Typed [" + valueToType + "] into textbox [" + elementName + "] successfully");
+		} catch (Exception e) {
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
 					"Unable to Type [" + valueToType + "] into textbox [" + elementName + "]");
 			throw e;
 		}
@@ -217,7 +246,7 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 					"Fetched Text [" + text + "] for element [" + elementName + "]");
 			return text;
 		} catch (Exception e) {
-			ExtentTestManager.getTest().log(LogStatus.PASS,
+			ExtentTestManager.getTest().log(LogStatus.FAIL,
 					"Unabel to fetch text for element [" + elementName + "]");
 
 		}
@@ -350,6 +379,22 @@ public class WebComponents implements IBrowserActions, IWebPageActions {
 
 		}
 		return null;
+	}
+
+	public void performAction(String action, String elementName, String value) throws Exception {
+		switch (action) {
+		case "Click":
+			clickIt(elementName);
+			break;
+		case "Type":
+			typeInto(elementName, value);
+			break;
+		case "GetText":
+			getText(elementName);
+			break;
+		default:
+			break;
+		}
 	}
 
 	public void rightClickOnScreen(String elementName) throws Exception {

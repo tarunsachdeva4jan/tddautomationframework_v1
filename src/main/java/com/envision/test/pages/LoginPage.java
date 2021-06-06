@@ -13,16 +13,25 @@ public class LoginPage extends WebComponents {
 	}
 
 	public void enterUserName(String userName) throws Exception {
-		typeInto("tbx_Username", userName);
+		// typeInto("tbx_Username", userName);
+		// typeInto("TextBox", "id", userName, "email");
+		performAction("Type", "tbx_Username", userName);
+
 	}
 
 	public void enterPassword(String password) throws Exception {
 
-		typeInto("tbx_Password", password);
+		// typeInto("tbx_Password", password);
+		performAction("Type", "tbx_Password", password);
+
+		// typeInto("TextBox", "id", password, "passwd");
 	}
 
 	public void hitSubmit() throws Exception {
-		clickIt("btn_Submit");
+		// clickIt("btn_Submit");
+		performAction("Click", "btn_Submit", "");
+
+		// clickIt("Button", "id", "SubmitLogin");
 	}
 
 	public void validateErrorHighlightOnUserName(String userName, String errorCode)

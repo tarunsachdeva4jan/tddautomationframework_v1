@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="3" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Testing Project Suite" duration-ms="45509" started-at="2021-06-01T01:57:24Z" finished-at="2021-06-01T01:58:09Z">
+  <suite name="Testing Project Suite" duration-ms="138862" started-at="2021-06-05T15:12:01Z" finished-at="2021-06-05T15:14:20Z">
     <groups>
     </groups>
-    <test name="DemoTests" duration-ms="45509" started-at="2021-06-01T01:57:24Z" finished-at="2021-06-01T01:58:09Z">
+    <test name="DemoTests" duration-ms="138862" started-at="2021-06-05T15:12:01Z" finished-at="2021-06-05T15:14:20Z">
       <class name="com.envision.test.tests.LoginTest">
-        <test-method status="PASS" signature="beforeAnythingElse()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeAnythingElse" is-config="true" duration-ms="17" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:24Z">
+        <test-method status="PASS" signature="beforeAnythingElse()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeAnythingElse" is-config="true" duration-ms="17" started-at="2021-06-05T11:12:01Z" finished-at="2021-06-05T11:12:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeAnythingElse -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeClass" is-config="true" duration-ms="3" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:24Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeClass" is-config="true" duration-ms="4" started-at="2021-06-05T11:12:01Z" finished-at="2021-06-05T11:12:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeMethod" is-config="true" duration-ms="4141" started-at="2021-05-31T21:57:24Z" finished-at="2021-05-31T21:57:29Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeMethod" is-config="true" duration-ms="4645" started-at="2021-06-05T11:12:02Z" finished-at="2021-06-05T11:12:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="loginScenario" duration-ms="39898" started-at="2021-05-31T21:57:29Z" data-provider="testCaseDataProvider" finished-at="2021-05-31T21:58:08Z">
+        <test-method status="FAIL" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="loginScenario" duration-ms="44549" started-at="2021-06-05T11:12:07Z" data-provider="testCaseDataProvider" finished-at="2021-06-05T11:12:51Z">
           <params>
             <param index="0">
               <value>
@@ -35,10 +35,11 @@
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at com.envision.core.components.WebComponents.clickIt(WebComponents.java:154)
-	at com.envision.test.pages.LoginPage.hitSubmit(LoginPage.java:25)
-	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:40)
-	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:21)
+	at com.envision.core.components.WebComponents.typeInto(WebComponents.java:213)
+	at com.envision.core.components.WebComponents.performAction(WebComponents.java:390)
+	at com.envision.test.pages.LoginPage.enterPassword(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:48)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,7 +59,103 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginScenario -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="afterMethod" is-config="true" duration-ms="232" started-at="2021-05-31T21:58:09Z" finished-at="2021-05-31T21:58:09Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="afterMethod" is-config="true" duration-ms="406" started-at="2021-06-05T11:12:51Z" finished-at="2021-06-05T11:12:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeMethod" is-config="true" duration-ms="2545" started-at="2021-06-05T11:12:52Z" finished-at="2021-06-05T11:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="loginScenario" duration-ms="41212" started-at="2021-06-05T11:12:54Z" data-provider="testCaseDataProvider" finished-at="2021-06-05T11:13:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hey@abc.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Testing@123]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.typeInto(WebComponents.java:213)
+	at com.envision.core.components.WebComponents.performAction(WebComponents.java:390)
+	at com.envision.test.pages.LoginPage.enterPassword(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:48)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:1049)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1254)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenario -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="afterMethod" is-config="true" duration-ms="428" started-at="2021-06-05T11:13:36Z" finished-at="2021-06-05T11:13:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="beforeMethod" is-config="true" duration-ms="2463" started-at="2021-06-05T11:13:36Z" finished-at="2021-06-05T11:13:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="loginScenario(java.lang.String, java.lang.String)[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="loginScenario" duration-ms="40191" started-at="2021-06-05T11:13:39Z" data-provider="testCaseDataProvider" finished-at="2021-06-05T11:14:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hey@abc.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Testing@123]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.envision.core.components.WebComponents.typeInto(WebComponents.java:213)
+	at com.envision.core.components.WebComponents.performAction(WebComponents.java:390)
+	at com.envision.test.pages.LoginPage.enterPassword(LoginPage.java:25)
+	at com.envision.test.pages.LoginPage.loginToApplication(LoginPage.java:48)
+	at com.envision.test.tests.LoginTest.loginScenario(LoginTest.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:1049)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1254)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenario -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.envision.test.tests.LoginTest@6f7fd0e6]" name="afterMethod" is-config="true" duration-ms="253" started-at="2021-06-05T11:14:19Z" finished-at="2021-06-05T11:14:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

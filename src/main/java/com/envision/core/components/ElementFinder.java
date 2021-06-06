@@ -26,7 +26,8 @@ public class ElementFinder {
 			}
 
 			element = waitForElementToBeVisible(driver, bys);
-			ExtentTestManager.getTest().log(LogStatus.PASS, "Element [" + value + "] successfully");
+			ExtentTestManager.getTest().log(LogStatus.PASS,
+					"Element [<b> " + by + ": " + value + " </b>] found.");
 		} catch (Exception e) {
 			ExtentTestManager.getTest().log(LogStatus.FAIL,
 					"Unable to locate Element [" + value + "]");
@@ -79,9 +80,16 @@ public class ElementFinder {
 
 	public static WebElement findElementByXpath(String pageName, String elementName)
 			throws Exception {
-		String xpath = RepositoryContext.FetchXpathFromOR(pageName, elementName);
+		String xpath = "";
+		xpath = RepositoryContext.FetchXpathFromOR(pageName, elementName);
 		return findElementBy("xpath", xpath);
 
+	}
+
+	public static WebElement findElementByXpath(String elementName, String xpathType, String value)
+			throws Exception {
+		String xpath = ModularObjects.getXpathForElement(elementName, xpathType, value);
+		return findElementBy("xpath", xpath);
 	}
 
 	public static WebElement findElementByID(String pageName, String elementName) throws Exception {
